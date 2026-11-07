@@ -1,0 +1,912 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>ZARGO Sports: экипировка для бокса и ММА</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700;900&family=Montserrat:wght@700;800;900&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#f8f9fa;
+  --card:#fff;
+  --ink:#1a1d23;
+  --mute:#6c757d;
+  --line:#dee2e6;
+  --red:#dc3545;
+  --red-dark:#c82333;
+  --gold:#ffc107;
+  --gold-dark:#e0a800;
+  --shadow:0 2px 8px rgba(0,0,0,.08);
+  --shadow-lg:0 8px 24px rgba(0,0,0,.12);
+  --radius:12px;
+  --radius-sm:8px;
+  box-sizing:border-box;
+  padding-top:env(safe-area-inset-top,0px);
+  padding-bottom:env(safe-area-inset-bottom,0px);
+}
+
+@media (prefers-color-scheme:dark){
+  :root:not([data-theme="light"]){
+    --bg:#0d1117;
+    --card:#161b22;
+    --ink:#f0f6fc;
+    --mute:#8b949e;
+    --line:#30363d;
+    --red:#ff6b6b;
+    --red-dark:#ff5252;
+    --gold:#ffd93d;
+    --gold-dark:#ffc933;
+    --shadow:0 2px 8px rgba(0,0,0,.3);
+    --shadow-lg:0 8px 24px rgba(0,0,0,.4);
+  }
+}
+
+:root[data-theme="dark"]{
+  --bg:#0d1117;
+  --card:#161b22;
+  --ink:#f0f6fc;
+  --mute:#8b949e;
+  --line:#30363d;
+  --red:#ff6b6b;
+  --red-dark:#ff5252;
+  --gold:#ffd93d;
+  --gold-dark:#ffc933;
+  --shadow:0 2px 8px rgba(0,0,0,.3);
+  --shadow-lg:0 8px 24px rgba(0,0,0,.4);
+}
+
+html{
+  scroll-padding-top:env(safe-area-inset-top,0px);
+  scroll-behavior:smooth;
+}
+
+*{box-sizing:border-box}
+
+body{
+  margin:0;
+  background:#0d1117;
+  color:var(--ink);
+  font-family:'Roboto',-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;
+  line-height:1.6;
+  font-size:16px;
+}
+
+a{color:inherit;transition:color .2s ease}
+
+.w{max-width:1200px;margin:0 auto;padding:0 24px}
+
+/* Top Bar */
+.top{
+  background:var(--ink);
+  color:var(--bg);
+  font-size:14px;
+  font-weight:400;
+  text-align:center;
+  border-bottom:1px solid rgba(255,255,255,.1);
+}
+.top .w{
+  display:block;
+  padding-top:12px;
+  padding-bottom:12px;
+}
+.top span{
+  margin-right:20px;
+}
+.top .phone{
+  font-weight:600;
+  color:#fff;
+}
+
+/* Header */
+.hd{
+  background:#1a1d23;
+  box-shadow:0 2px 8px rgba(0,0,0,.3);
+  position:sticky;
+  top:0;
+  z-index:100;
+}
+.hd .w{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:20px;
+  padding-top:20px;
+  padding-bottom:20px;
+  flex-wrap:wrap;
+}
+.logo{
+  font-family:'Montserrat',sans-serif;
+  font-weight:900;
+  font-size:32px;
+  text-decoration:none;
+  letter-spacing:-0.5px;
+  display:flex;
+  align-items:center;
+  gap:2px;
+  color:#fff;
+}
+.logo span{color:var(--red)}
+.hd nav{display:flex;gap:24px;flex-wrap:wrap}
+.hd nav a{
+  font-weight:400;
+  font-size:15px;
+  text-decoration:none;
+  position:relative;
+  padding:4px 0;
+  transition:color .2s ease;
+  color:#fff;
+}
+.hd nav a:hover{color:var(--red)}
+.hd nav a::after{
+  content:'';
+  position:absolute;
+  left:0;
+  bottom:0;
+  width:0;
+  height:2px;
+  background:var(--red);
+  transition:width .3s ease;
+}
+.hd nav a:hover::after{width:100%}
+
+/* Hero Section */
+.hero{
+  padding:80px 0 60px;
+  background:linear-gradient(rgba(13,17,23,.55),rgba(13,17,23,.55)),url("1.jpg") center/cover no-repeat #1a1d23;
+  position:relative;
+  overflow:hidden;
+  color:#fff;
+  text-align:center;
+}
+.hero::before{
+  content:'';
+  position:absolute;
+  top:-50%;
+  right:-10%;
+  width:600px;
+  height:600px;
+  background:radial-gradient(circle,rgba(255,255,255,.05) 0%,transparent 70%);
+  border-radius:50%;
+}
+.hero::after{
+  content:'';
+  position:absolute;
+  bottom:0;
+  left:0;
+  right:0;
+  height:100px;
+  background:linear-gradient(to bottom,transparent,var(--bg));
+}
+.hero .w{position:relative;z-index:1}
+h1{
+  font-family:'Montserrat',sans-serif;
+  font-weight:900;
+  font-size:clamp(48px,10vw,92px);
+  line-height:1;
+  margin:0 0 24px;
+  letter-spacing:-2px;
+  color:#fff;
+}
+h1 span{
+  color:#ffd93d;
+  position:relative;
+  display:inline-block;
+}
+.hero p{
+  max-width:56ch;
+  color:rgba(255,255,255,.85);
+  font-size:19px;
+  line-height:1.7;
+  margin:0 auto 32px;
+  font-weight:400;
+}
+.btn{
+  display:inline-block;
+  font:inherit;
+  font-weight:700;
+  font-size:16px;
+  padding:16px 32px;
+  background:var(--red);
+  color:#fff;
+  border:0;
+  border-radius:var(--radius-sm);
+  cursor:pointer;
+  text-decoration:none;
+  transition:all .3s ease;
+  box-shadow:0 4px 12px rgba(220,53,69,.25);
+}
+.btn:hover{
+  background:var(--red-dark);
+  transform:translateY(-2px);
+  box-shadow:0 6px 20px rgba(220,53,69,.35);
+}
+.hero .btn.o{
+  background:transparent;
+  color:#fff;
+  border:2px solid rgba(255,255,255,.5);
+  padding:14px 30px;
+  box-shadow:none;
+}
+.hero .btn.o:hover{
+  background:rgba(255,255,255,.1);
+  border-color:#fff;
+  color:#fff;
+  transform:translateY(-2px);
+}
+
+/* Section Titles */
+h2.s{
+  font-family:'Montserrat',sans-serif;
+  font-weight:900;
+  font-size:clamp(36px,6vw,54px);
+  margin:0 0 32px;
+  line-height:1.1;
+  letter-spacing:-1px;
+}
+
+section{padding:64px 0}
+
+/* Categories */
+.cats{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(240px,1fr));
+  gap:20px;
+}
+.cat{
+  height:180px;
+  border:0;
+  border-radius:var(--radius);
+  color:#fff;
+  text-align:left;
+  padding:20px;
+  display:flex;
+  align-items:flex-end;
+  font:inherit;
+  font-family:'Montserrat',sans-serif;
+  font-weight:900;
+  font-size:28px;
+  cursor:pointer;
+  text-shadow:0 2px 8px rgba(0,0,0,.4);
+  transition:transform .3s ease,box-shadow .3s ease;
+  box-shadow:var(--shadow-lg);
+  overflow:hidden;
+  position:relative;
+}
+.cat::before{
+  content:'';
+  position:absolute;
+  inset:0;
+  background:rgba(0,0,0,.1);
+  opacity:0;
+  transition:opacity .3s ease;
+}
+.cat:hover{
+  transform:translateY(-8px);
+  box-shadow:0 12px 32px rgba(0,0,0,.18);
+}
+.cat:hover::before{opacity:1}
+
+/* Filters */
+.chips{
+  display:flex;
+  gap:12px;
+  flex-wrap:wrap;
+  margin-bottom:32px;
+}
+.chips button{
+  font:inherit;
+  font-weight:600;
+  font-size:15px;
+  padding:10px 20px;
+  border:2px solid var(--line);
+  border-radius:24px;
+  background:var(--card);
+  color:var(--ink);
+  cursor:pointer;
+  transition:all .2s ease;
+}
+.chips button:hover{
+  border-color:var(--red);
+  color:var(--red);
+}
+.chips button[aria-pressed="true"]{
+  background:var(--red);
+  border-color:var(--red);
+  color:#fff;
+  box-shadow:0 4px 12px rgba(220,53,69,.25);
+}
+
+/* Product Grid */
+.grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fill,minmax(280px,1fr));
+  gap:24px;
+}
+
+article{
+  background:var(--card);
+  border:1px solid var(--line);
+  border-radius:var(--radius);
+  display:flex;
+  flex-direction:column;
+  overflow:hidden;
+  transition:all .3s ease;
+  box-shadow:var(--shadow);
+}
+article:hover{
+  transform:translateY(-4px);
+  box-shadow:var(--shadow-lg);
+}
+
+.sw{
+  aspect-ratio:1/1;
+  background:#fff;
+  border-bottom:1px solid var(--line);
+}
+.sw img{
+  display:block;
+  width:100%;
+  height:100%;
+  object-fit:contain;
+}
+
+.bd{
+  padding:20px;
+  display:flex;
+  flex-direction:column;
+  gap:12px;
+  flex:1;
+}
+
+h2{
+  margin:0;
+  font-size:19px;
+  font-weight:700;
+  line-height:1.3;
+}
+
+.m{
+  color:var(--mute);
+  font-size:14px;
+  margin:0;
+  line-height:1.5;
+}
+
+.pr{
+  font-family:'Montserrat',sans-serif;
+  font-size:32px;
+  font-weight:800;
+  color:var(--red);
+  letter-spacing:-1px;
+}
+
+select,input,textarea{
+  font:inherit;
+  padding:12px;
+  border:2px solid var(--line);
+  border-radius:var(--radius-sm);
+  background:var(--card);
+  color:var(--ink);
+  width:100%;
+  transition:border-color .2s ease,box-shadow .2s ease;
+}
+select:focus,input:focus,textarea:focus{
+  outline:none;
+  border-color:var(--red);
+  box-shadow:0 0 0 3px rgba(220,53,69,.1);
+}
+
+.add{
+  font:inherit;
+  font-weight:700;
+  padding:12px;
+  background:var(--red);
+  color:#fff;
+  border:0;
+  border-radius:var(--radius-sm);
+  cursor:pointer;
+  margin-top:auto;
+  transition:all .2s ease;
+}
+.add:hover{
+  background:var(--red-dark);
+  transform:scale(1.02);
+}
+
+/* Tiers */
+.tiers{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+  gap:20px;
+}
+.tiers div{
+  background:var(--card);
+  border:2px solid var(--line);
+  border-radius:var(--radius);
+  padding:24px;
+  transition:all .3s ease;
+  box-shadow:var(--shadow);
+}
+.tiers div:hover{
+  border-color:var(--red);
+  transform:translateY(-4px);
+  box-shadow:var(--shadow-lg);
+}
+.tiers b{
+  display:block;
+  font-size:24px;
+  font-weight:800;
+  margin-bottom:8px;
+  color:var(--red);
+}
+
+/* Columns */
+.cols{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
+  gap:32px;
+}
+.cols h3{
+  margin:0 0 12px;
+  font-size:22px;
+  font-weight:700;
+}
+.cols p,.cols li{
+  color:var(--mute);
+  line-height:1.7;
+}
+.cols ul{
+  padding-left:20px;
+  margin:8px 0 0;
+}
+.cols li{margin-bottom:8px}
+
+/* Footer */
+footer{
+  background:var(--ink);
+  color:var(--bg);
+  padding:32px 0;
+  margin-top:40px;
+  text-align:center;
+  font-size:14px;
+  font-weight:500;
+}
+
+/* Fixed Bottom Bar */
+#bar{
+  position:fixed;
+  left:0;
+  right:0;
+  bottom:0;
+  background:var(--ink);
+  color:var(--bg);
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  gap:16px;
+  padding:16px 24px calc(16px + env(safe-area-inset-bottom,0px));
+  z-index:200;
+  box-shadow:0 -4px 12px rgba(0,0,0,.1);
+}
+#bar span{
+  font-weight:600;
+  font-size:15px;
+}
+#bar button{
+  font:inherit;
+  font-weight:700;
+  padding:12px 24px;
+  background:var(--red);
+  color:#fff;
+  border:0;
+  border-radius:var(--radius-sm);
+  cursor:pointer;
+  transition:all .2s ease;
+}
+#bar button:hover{
+  background:var(--red-dark);
+  transform:scale(1.05);
+}
+
+/* Dialog */
+dialog{
+  width:min(640px,94vw);
+  max-height:85vh;
+  overflow:auto;
+  background:var(--card);
+  color:var(--ink);
+  border:none;
+  border-radius:var(--radius);
+  padding:32px;
+  box-shadow:var(--shadow-lg);
+}
+dialog::backdrop{
+  background:rgba(0,0,0,.6);
+  backdrop-filter:blur(4px);
+}
+
+.row{
+  display:grid;
+  grid-template-columns:1fr auto auto;
+  gap:16px;
+  align-items:center;
+  padding:16px 0;
+  border-bottom:1px solid var(--line);
+}
+.row small{
+  display:block;
+  color:var(--mute);
+  margin-top:4px;
+  font-size:13px;
+}
+
+.q{
+  display:flex;
+  align-items:center;
+  gap:8px;
+}
+.q button{
+  width:32px;
+  height:32px;
+  border:2px solid var(--line);
+  border-radius:6px;
+  background:var(--card);
+  color:var(--ink);
+  cursor:pointer;
+  font:inherit;
+  font-weight:700;
+  transition:all .2s ease;
+}
+.q button:hover{
+  border-color:var(--red);
+  color:var(--red);
+}
+
+.tot{
+  display:flex;
+  justify-content:space-between;
+  font-size:28px;
+  font-weight:800;
+  padding:20px 0;
+  color:var(--red);
+}
+
+.f{
+  display:grid;
+  gap:16px;
+  margin-bottom:20px;
+}
+
+.act{
+  display:flex;
+  gap:12px;
+  flex-wrap:wrap;
+}
+.act button,.act a{
+  font:inherit;
+  font-weight:700;
+  padding:12px 20px;
+  border:2px solid var(--ink);
+  border-radius:var(--radius-sm);
+  background:transparent;
+  color:var(--ink);
+  cursor:pointer;
+  text-decoration:none;
+  transition:all .2s ease;
+}
+.act button:hover,.act a:hover{
+  background:var(--ink);
+  color:var(--bg);
+}
+.act .go{
+  background:var(--red);
+  border-color:var(--red);
+  color:#fff;
+}
+.act .go:hover{
+  background:var(--red-dark);
+  border-color:var(--red-dark);
+}
+
+#msg{
+  min-height:1.4em;
+  color:var(--mute);
+  font-size:14px;
+  margin:12px 0 0;
+}
+
+/* Focus Styles */
+button:focus-visible,select:focus-visible,input:focus-visible,textarea:focus-visible,a:focus-visible{
+  outline:3px solid var(--gold);
+  outline-offset:2px;
+}
+
+/* Responsive */
+@media (max-width:768px){
+  h1{font-size:48px}
+  h2.s{font-size:36px}
+  .hero{padding:60px 0 40px}
+  section{padding:48px 0}
+  .grid{grid-template-columns:repeat(auto-fill,minmax(240px,1fr))}
+  dialog{padding:24px}
+}
+</style>
+</head>
+<body>
+
+<div class="hd">
+  <div class="w">
+    <a class="logo" href="#">ZARGO<span>SPORTS</span></a>
+    <nav>
+      <a href="#catalog">Каталог</a>
+      <a href="#contacts">Контакты</a>
+    </nav>
+  </div>
+</div>
+
+<div class="hero">
+  <div class="w">
+    <h1>Экипировка<br>для <span>бокса</span><br>и ММА</h1>
+    <p>Перчатки, шлемы и костюмы из натуральной воловьей кожи и полиэстера. Качество, проверенное спортсменами.</p>
+    <a class="btn" href="#catalog">Смотреть каталог</a>
+  </div>
+</div>
+
+<div style="background:#fff;padding-top:1px">
+
+<section id="catalog">
+  <div class="w">
+    <h2 class="s">Каталог продукции</h2>
+    <div class="chips" id="filters" aria-label="Фильтр по категориям"></div>
+    <div class="grid" id="grid"></div>
+  </div>
+</section>
+
+<section id="contacts" style="background:#f8f9fa">
+  <div class="w">
+    <h2 class="s">Контакты</h2>
+    <div class="cols">
+      <div>
+        <h3>Телефон</h3>
+        <p><a href="#" data-tel data-c="phone"></a></p>
+      </div>
+      <div>
+        <h3>Электронная почта</h3>
+        <p><a href="#" data-mail data-c="email"></a></p>
+      </div>
+      <div>
+        <h3>Режим работы</h3>
+        <p data-c="hours"></p>
+      </div>
+    </div>
+  </div>
+</section>
+
+</div>
+
+<footer>
+  <div class="w">© 2024 ZARGO Sports. Все права защищены.</div>
+</footer>
+
+<div id="bar">
+  <span id="sum">Корзина пуста</span>
+  <button id="open">Корзина и заказ</button>
+</div>
+
+<dialog id="dlg">
+  <h2 style="font-size:28px;margin:0 0 16px">Ваш заказ</h2>
+  <div id="items"></div>
+  <div class="tot"><span>Итого</span><span id="total">0</span></div>
+  <div class="f">
+    <input id="nm" placeholder="Ваше имя *" autocomplete="name">
+    <input id="ph" placeholder="Телефон *" autocomplete="tel" inputmode="tel">
+    <input id="em" type="email" placeholder="Электронная почта" autocomplete="email">
+    <select id="dv" aria-label="Способ получения">
+      <option>Самовывоз</option>
+      <option>Доставка транспортной компанией</option>
+      <option>Другой способ, согласуем</option>
+    </select>
+    <textarea id="cm" rows="3" placeholder="Комментарий к заказу"></textarea>
+  </div>
+  <div class="act">
+    <button class="go" id="send">Оформить заказ</button>
+    <button id="close">Закрыть</button>
+  </div>
+  <p id="msg" role="status"></p>
+</dialog>
+
+<script>
+/* ============================================
+   НАСТРОЙКИ - Замените на свои данные
+   ============================================ */
+var C={
+  phone:"+7 (000) 000-00-00",
+  wa:"70000000000",
+  email:"arsofia004@mail.ru",
+  addr:"укажите адрес пункта выдачи",
+  hours:"Пн–Пт 10:00–19:00",
+  form:"/api/order"  // handled by deploy/_worker.js on Cloudflare Pages -> Telegram
+};
+
+var CUR="₽";
+
+var CATS={
+  all:"Все",
+  gl:"Перчатки",
+  hd:"Шлемы",
+  ts:"Костюмы",
+  mma:"ММА"
+};
+
+var OZ=["10 oz","12 oz","14 oz","16 oz"],
+    SZ=["S","M","L","XL"],
+    KOZH="Натуральная воловья кожа",
+    AM=", внутри искусственная кожа Amara";
+
+var P=[
+  {c:"gl",n:"Боксёрские перчатки",col:"Небесно-голубой/белый",img:"img/gl-sky.jpg",m:KOZH,s:OZ,p:[4500,5800,7300]},
+  {c:"gl",n:"Боксёрские перчатки",col:"Бело-золотой",img:"img/gl-whitegold.jpg",m:KOZH,s:OZ,p:[4500,5800,7300]},
+  {c:"gl",n:"Боксёрские перчатки",col:"Жёлто-чёрный",img:"img/gl-yellowblack.jpg",m:KOZH,s:OZ,p:[4500,5800,7300]},
+  {c:"gl",n:"Боксёрские перчатки на шнурках",col:"Золотой",img:"img/gl-lace-gold.jpg",m:KOZH,s:OZ,p:[4500,5800,7300]},
+  {c:"hd",n:"Боксёрский шлем",col:"Серо-белый",img:"img/hd-whitegrey.jpg",m:KOZH+AM,s:SZ,p:[4500,5800,7300]},
+  {c:"hd",n:"Боксёрский шлем",col:"Небесно-голубой/белый",img:"img/hd-sky.jpg",m:KOZH+AM,s:SZ,p:[4500,5800,7300]},
+  {c:"hd",n:"Боксёрский шлем",col:"Бело-красный",img:"img/hd-whitered.jpg",m:KOZH+AM,s:SZ,p:[4900,6500,8200]},
+  {c:"hd",n:"Боксёрский шлем",col:"Бело-золотой",img:"img/hd-whitegold.jpg",m:KOZH+AM,s:SZ,p:[4900,6500,8200]},
+  {c:"hd",n:"Боксёрский шлем",col:"Чёрно-золотой",img:"img/hd-blackgold.jpg",m:KOZH+AM,s:SZ,p:[4900,6500,8200]},
+  {c:"ts",n:"Спортивный костюм",col:"Чёрно-белый",img:"img/ts-blackwhite.jpg",m:"100% полиэстер",s:SZ,p:[4500,5500,6500]},
+  {c:"ts",n:"Спортивный костюм",col:"Синий",img:"img/ts-blue.jpg",m:"100% полиэстер",s:SZ,p:[4500,5500,6500]},
+  {c:"mma",n:"Перчатки ММА",col:"Золотой",img:"img/mma-gold.jpg",m:KOZH,s:SZ,p:[2800,3900,5000]}
+];
+
+/* ============================================
+   ЛОГИКА ПРИЛОЖЕНИЯ
+   ============================================ */
+var cart=[],filter="all";
+
+function fmt(n){return n.toLocaleString("ru-RU")+" "+CUR}
+
+function unit(i){
+  var q=0;
+  cart.forEach(function(l){if(l.i===i)q+=l.q});
+  var p=P[i].p;
+  return q>=100?p[0]:q>=10?p[1]:p[2];
+}
+
+function render(){
+  document.getElementById("filters").innerHTML=Object.keys(CATS).map(function(k){
+    return '<button aria-pressed="'+(k===filter)+'" data-f="'+k+'">'+CATS[k]+'</button>';
+  }).join("");
+
+  document.getElementById("grid").innerHTML=P.map(function(x,i){
+    if(filter!=="all"&&x.c!==filter)return "";
+    return '<article>'+
+      '<div class="sw"><img src="'+x.img+'" alt="'+x.n+', '+x.col+'" loading="lazy"></div>'+
+      '<div class="bd">'+
+        '<h2>'+x.n+'</h2>'+
+        '<p class="m">'+x.col+'</p>'+
+        '<p class="m">'+x.m+'</p>'+
+        '<div class="pr">'+fmt(x.p[2])+'</div>'+
+        '<select aria-label="Размер" id="s'+i+'">'+x.s.map(function(s){return '<option>'+s+'</option>'}).join("")+'</select>'+
+        '<button class="add" data-a="'+i+'">Добавить в корзину</button>'+
+      '</div>'+
+    '</article>';
+  }).join("");
+}
+
+function text(){
+  var t=0,r=cart.map(function(l){
+    var x=P[l.i],s=l.q*unit(l.i);
+    t+=s;
+    return x.n+", "+x.col+", "+l.s+" × "+l.q+" = "+fmt(s);
+  });
+  return "Заказ ZARGO Sports\n"+r.join("\n")+"\nИтого: "+fmt(t)+
+    "\nПолучение: "+document.getElementById("dv").value+
+    "\nИмя: "+document.getElementById("nm").value+
+    "\nТелефон: "+document.getElementById("ph").value+
+    "\nПочта: "+document.getElementById("em").value+
+    "\nКомментарий: "+document.getElementById("cm").value;
+}
+
+function upd(){
+  var n=0,t=0;
+  cart.forEach(function(l){n+=l.q;t+=l.q*unit(l.i)});
+  document.getElementById("sum").textContent=n?n+" шт на "+fmt(t):"Корзина пуста";
+  document.getElementById("total").textContent=fmt(t);
+  document.getElementById("items").innerHTML=cart.length?cart.map(function(l,k){
+    var x=P[l.i];
+    return '<div class="row">'+
+      '<div>'+x.n+'<small>'+x.col+', '+l.s+' · '+fmt(unit(l.i))+'</small></div>'+
+      '<div class="q">'+
+        '<button data-d="'+k+'" aria-label="Меньше">−</button>'+
+        '<span>'+l.q+'</span>'+
+        '<button data-u="'+k+'" aria-label="Больше">+</button>'+
+      '</div>'+
+      '<b>'+fmt(l.q*unit(l.i))+'</b>'+
+    '</div>';
+  }).join(""):'<p class="m">В корзине пока ничего нет. Выберите модель и размер.</p>';
+}
+
+// Populate contact info
+document.querySelectorAll("[data-c]").forEach(function(e){e.textContent=C[e.dataset.c]});
+document.querySelectorAll("[data-tel]").forEach(function(e){e.href="tel:"+C.phone.replace(/[^+\d]/g,"")});
+document.querySelectorAll("[data-mail]").forEach(function(e){e.href="mailto:"+C.email});
+
+// Event delegation
+document.addEventListener("click",function(e){
+  var d=e.target.dataset;
+  if(!d)return;
+
+  if(d.f){filter=d.f;render()}
+  if(d.t){filter=d.t;render();document.getElementById("catalog").scrollIntoView()}
+  if(d.a!==undefined){
+    var i=+d.a,s=document.getElementById("s"+i).value,
+        f=cart.find(function(l){return l.i===i&&l.s===s});
+    f?f.q++:cart.push({i:i,s:s,q:1});
+    upd();
+  }
+  if(d.u!==undefined){cart[+d.u].q++;upd()}
+  if(d.d!==undefined){
+    var l=cart[+d.d];
+    l.q--;
+    if(l.q<1)cart.splice(+d.d,1);
+    upd();
+  }
+});
+
+// Modal actions
+document.getElementById("open").onclick=function(){document.getElementById("dlg").showModal()};
+document.getElementById("close").onclick=function(){document.getElementById("dlg").close()};
+
+// Submit order
+document.getElementById("send").onclick=function(){
+  var b=this,m=document.getElementById("msg"),
+      ph=document.getElementById("ph").value.trim(),
+      em=document.getElementById("em").value.trim(),
+      nm=document.getElementById("nm").value.trim();
+
+  if(!cart.length){m.textContent="Сначала добавьте товары в корзину.";return}
+  if(!nm){m.textContent="Укажите ваше имя.";return}
+  if(!ph&&!em){m.textContent="Укажите телефон или почту, чтобы менеджер смог с вами связаться.";return}
+
+  function done(){
+    document.getElementById("dlg").innerHTML='<h2 style="font-size:28px;margin:0 0 16px">Спасибо за заказ!</h2>'+
+    '<p>С вами в скором времени свяжется наш менеджер.</p>'+
+    '<div class="act"><button class="go" id="ok2">Закрыть</button></div>';
+    document.getElementById("ok2").onclick=function(){location.reload()}
+  }
+
+  function fail(){
+    b.disabled=false;
+    m.textContent="Не удалось отправить заказ. Попробуйте ещё раз или позвоните нам: "+C.phone;
+  }
+
+  if(!C.form){
+    location.href="mailto:"+C.email+"?subject="+encodeURIComponent("Заказ ZARGO Sports")+"&body="+encodeURIComponent(text());
+    done();
+    return;
+  }
+
+  b.disabled=true;
+  m.textContent="Отправляем заказ…";
+
+  fetch(C.form,{
+    method:"POST",
+    headers:{"Content-Type":"application/json","Accept":"application/json"},
+    body:JSON.stringify({
+      name:nm,
+      phone:ph,
+      email:em,
+      delivery:document.getElementById("dv").value,
+      comment:document.getElementById("cm").value,
+      order:text()
+    })
+  }).then(function(r){r.ok?done():fail()},fail);
+};
+
+render();
+upd();
+</script>
+
+</body>
+</html>
